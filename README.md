@@ -103,5 +103,5 @@ A continuación se muestran algunas vistas del sistema funcionando:
 ## Notas
 
 - El sistema está configurado para funcionar en entornos locales usando XAMPP.
-- La carga de imágenes está planificada pero no implementada en esta versión.
+- La carga de imágenes estuvo planificada pero no implementada en esta versión.
 
