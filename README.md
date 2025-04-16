@@ -85,6 +85,21 @@ Acceder desde el navegador a `http://localhost:8000`
 
 ---
 
+## Capturas de pantalla
+
+A continuación se muestran algunas vistas del sistema funcionando:
+
+### Crear producto
+![Crear producto](Images/create_product.png)
+
+### Crear usuario
+![Crear usuario](Images/create_user.png)
+
+### Ver productos
+![Ver productos](Images/view_products.png)
+
+---
+
 ## Notas
 
 - El sistema está configurado para funcionar en entornos locales usando XAMPP.
