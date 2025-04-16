@@ -1,21 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Iniciar Sesión</h1>
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Iniciar Sesión</h2>
 
-    <form method="POST" action="{{ route('login.post') }}">
-        @csrf
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo electrónico:</label>
-            <input type="email" name="email" id="email" class="form-control" required autofocus>
+                <form method="POST" action="{{ route('login.post') }}">
+                    @csrf
+
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" id="email" class="form-control" required autofocus>
+                        <label for="email">Correo electrónico</label>
+                    </div>
+
+                    <div class="form-floating mb-4">
+                        <input type="password" name="password" id="password" class="form-control" required>
+                        <label for="password">Contraseña</label>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Ingresar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <div class="mb-3">
-            <label for="password" class="form-label">Contraseña:</label>
-            <input type="password" name="password" id="password" class="form-control" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Ingresar</button>
-    </form>
+    </div>
+</div>
 @endsection

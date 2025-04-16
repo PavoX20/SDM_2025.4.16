@@ -78,30 +78,48 @@ Acceder desde el navegador a `http://localhost:8000`
 ## Funcionalidades
 
 - Registro e inicio de sesión de usuarios
-- CRUD de productos
+- CRUD completo de productos
 - Uso de UUID como clave primaria
 - Middleware para protección de rutas
-- Diseño básico con Bootstrap 5
+- Diseño moderno con Bootstrap 5
+- Modo claro/oscuro con persistencia
+- Validaciones con mensajes
+- Layout responsive
 
 ---
 
 ## Capturas de pantalla
 
-A continuación se muestran algunas vistas del sistema funcionando:
+### Pantalla de bienvenida
+![Welcome](Images/Welcome.png)
 
-### Crear producto
-![Crear producto](Images/create_product.png)
+### Login
+![Login](Images/Login.png)
 
-### Crear usuario
-![Crear usuario](Images/create_user.png)
+### Registro de usuario
+![Registro](Images/create_user.png)
 
-### Ver productos
+---
+
+### Listado de productos
 ![Ver productos](Images/view_products.png)
+
+### Agregar producto
+![Agregar producto](Images/add_products.png)
+
+### Producto guardado exitosamente
+![Producto agregado](Images/product_added.png)
+
+### Editar producto
+![Editar producto](Images/edit_product.png)
+
+### Eliminar producto
+![Eliminar producto](Images/delete_product.png)
 
 ---
 
 ## Notas
 
 - El sistema está configurado para funcionar en entornos locales usando XAMPP.
-- La carga de imágenes estuvo planificada pero no implementada en esta versión.
-
+- La funcionalidad de subida de imágenes se encuentra planificada.
+- Todas las vistas están optimizadas para usabilidad y estética.

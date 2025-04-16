@@ -9,34 +9,42 @@
 </head>
 
 <body>
-    <header class="bg-dark text-white p-3 mb-4">
-        <div class="container">
-            <nav class="nav justify-content-between align-items-center">
-                <div>
-                    <a class="nav-link text-white d-inline" href="{{ route('productos.Bienvenido') }}">Inicio</a>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="{{ route('productos.Bienvenido') }}">Mi Tienda</a>
 
-                    @auth
-                        <a class="nav-link text-white d-inline" href="{{ route('productos.index') }}">Ver productos</a>
-                    @endauth
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContenido">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('productos.index') }}">Ver Productos</a>
+                            </li>
+                        @endauth
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <button id="modoToggle" class="btn btn-outline-light btn-sm">Modo Oscuro</button>
+
+                        @guest
+                            <a class="btn btn-outline-light btn-sm" href="{{ route('register') }}">Registrarse</a>
+                            <a class="btn btn-outline-light btn-sm" href="{{ route('login') }}">Iniciar Sesión</a>
+                        @endguest
+
+                        @auth
+                            <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                                @csrf
+                                <button type="submit" class="btn btn-outline-light btn-sm">Cerrar Sesión</button>
+                            </form>
+                        @endauth
+                    </div>
                 </div>
-
-                <div class="d-flex align-items-center gap-2">
-                    <button id="modoToggle" class="btn btn-outline-light btn-sm">Modo Oscuro</button>
-
-                    @guest
-                        <a class="nav-link text-white d-inline" href="{{ route('register') }}">Registrarse</a>
-                        <a class="nav-link text-white d-inline" href="{{ route('login') }}">Iniciar Sesión</a>
-                    @endguest
-
-                    @auth
-                        <form action="{{ route('logout') }}" method="POST" class="d-inline">
-                            @csrf
-                            <button type="submit" class="btn btn-link text-white" style="text-decoration: none;">Cerrar Sesión</button>
-                        </form>
-                    @endauth
-                </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
 
     <main class="container">
@@ -81,7 +89,7 @@
             color: #f1f1f1;
         }
 
-        .modo-oscuro header.bg-dark {
+        .modo-oscuro .navbar {
             background-color: #1e1e1e !important;
         }
 
