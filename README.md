@@ -62,12 +62,12 @@ cp .env.example .env
 Edita las siguientes variables de conexión a base de datos con tus propios datos:
 
 ```env
-DB_CONNECTION=mysql           # Tipo de base de datos (normalmente mysql)
-DB_HOST=127.0.0.1             # Dirección del servidor de base de datos (puede ser localhost o el endpoint de RDS)
-DB_PORT=3306                  # Puerto por defecto de MySQL
-DB_DATABASE=nombre_base       # Nombre de la base de datos a usar
-DB_USERNAME=usuario           # Usuario con permisos sobre esa base
-DB_PASSWORD=contraseña        # Contraseña del usuario
+DB_CONNECTION=mysql          
+DB_HOST=127.0.0.1             
+DB_PORT=3306                  
+DB_DATABASE=nombre_base       
+DB_USERNAME=usuario           
+DB_PASSWORD=contraseña        
 ```
 
 > Ejemplo para Amazon RDS:
@@ -141,3 +141,16 @@ O usa la IP pública si está desplegado en la nube.
 
 ### Eliminar producto
 ![Eliminar producto](Images/delete_product.png)
+
+---
+
+## 🎥 Video demostrativo
+
+A continuación, puedes ver un video que muestra paso a paso cómo clonar, configurar y ejecutar este proyecto Laravel en entorno local:
+
+📺 [Ver en YouTube](https://youtu.be/D1O5e9Dc7Lk)
+
+> Incluye: configuración del entorno, edición del `.env`, migraciones y ejecución del servidor.
+
+---
+
