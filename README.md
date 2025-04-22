@@ -85,6 +85,9 @@ php artisan key:generate
 
 ### 5. Crear las tablas en la base de datos
 
+> ⚠️ **Importante:** asegúrate de que la base de datos especificada en `.env` ya exista en tu servidor MySQL antes de ejecutar este paso.  
+> Laravel **no crea automáticamente la base de datos**, solo las tablas. 
+
 ```bash
 php artisan migrate
 ```
