@@ -1,94 +1,119 @@
 # Proyecto Laravel - CRUD de Productos
 
 Este proyecto fue desarrollado como parte de una prueba técnica.  
-Consiste en un sistema de autenticación de usuarios y gestión de productos.
+Consiste en un sistema completo de autenticación de usuarios y gestión de productos.
 
-Tecnologías utilizadas:
+---
 
-- Laravel
-- MySQL (XAMPP)
-- PHP 8.1+
+## ☁️ Despliegue en AWS
+
+La aplicación está actualmente desplegada en un entorno real utilizando:
+
+- ✅ Amazon EC2 (servidor web con Laravel y PHP 8.2)
+- ✅ Amazon RDS (MySQL como base de datos relacional)
+
+🔗 Acceso al sistema (IP pública):
+
+```
+http://18.208.234.49
+```
+
+---
+
+## 🛠 Tecnologías utilizadas
+
+- Laravel 12+
+- PHP 8.2 o superior
+- MySQL / Amazon RDS
 - Bootstrap 5
 
 ---
 
-## Requisitos
+## 📦 Requisitos
 
-- PHP (incluido en XAMPP)
+- PHP 8.2 o superior
 - Composer
-- MySQL (puede usarse phpMyAdmin)
-- Navegador web
+- MySQL (puede ser local o en la nube como Amazon RDS)
+- Navegador web moderno
 
 ---
 
-## Instrucciones de instalación
+## 🚀 Instrucciones de instalación
 
-1. Clonar el repositorio:
+### 1. Clonar el repositorio
 
 ```bash
 git clone https://github.com/PavoX20/SDM_2025.4.16.git
 cd SDM_2025.4.16
 ```
 
-2. Instalar dependencias de Laravel:
+### 2. Instalar dependencias
 
 ```bash
 composer install
 ```
 
-3. Copiar y configurar el archivo `.env`:
+### 3. Copiar y configurar el archivo `.env`
 
 ```bash
 cp .env.example .env
 ```
 
-Editar las variables de conexión a base de datos:
+Edita las siguientes variables de conexión a base de datos con tus propios datos:
 
-```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=nombre_de_tu_base
-DB_USERNAME=root
-DB_PASSWORD=
+```env
+DB_CONNECTION=mysql           # Tipo de base de datos (normalmente mysql)
+DB_HOST=127.0.0.1             # Dirección del servidor de base de datos (puede ser localhost o el endpoint de RDS)
+DB_PORT=3306                  # Puerto por defecto de MySQL
+DB_DATABASE=nombre_base       # Nombre de la base de datos a usar
+DB_USERNAME=usuario           # Usuario con permisos sobre esa base
+DB_PASSWORD=contraseña        # Contraseña del usuario
 ```
 
-4. Generar clave de aplicación:
+> Ejemplo para Amazon RDS:
+>
+> DB_HOST=db-instance.abcdefgh1234.us-east-1.rds.amazonaws.com  
+> DB_DATABASE=laravel_app  
+> DB_USERNAME=admin  
+> DB_PASSWORD=claveSegura123
+
+### 4. Generar clave de aplicación
 
 ```bash
 php artisan key:generate
 ```
 
-5. Crear las tablas en la base de datos:
+### 5. Crear las tablas en la base de datos
 
 ```bash
 php artisan migrate
 ```
 
-6. Levantar el servidor:
+### 6. Levantar el servidor de desarrollo
 
 ```bash
 php artisan serve
 ```
 
-Acceder desde el navegador a `http://localhost:8000`
+Luego accede desde tu navegador a `http://localhost:8000`  
+O usa la IP pública si está desplegado en la nube.
 
 ---
 
-## Funcionalidades
+## ✅ Funcionalidades
 
 - Registro e inicio de sesión de usuarios
 - CRUD completo de productos
-- Uso de UUID como clave primaria
 - Middleware para protección de rutas
-- Diseño moderno con Bootstrap 5
-- Modo claro/oscuro con persistencia
-- Validaciones con mensajes
-- Layout responsive
+- Validaciones con mensajes personalizados
+- Interfaz clara y moderna con Bootstrap 5
+- Modo claro / oscuro con persistencia
+- Responsive design
+- Uso de UUID como clave primaria
 
 ---
 
-## Capturas de pantalla
+## 📸 Capturas de pantalla
 
 ### Pantalla de bienvenida
 ![Welcome](Images/Welcome.png)
@@ -98,8 +123,6 @@ Acceder desde el navegador a `http://localhost:8000`
 
 ### Registro de usuario
 ![Registro](Images/create_user.png)
-
----
 
 ### Listado de productos
 ![Ver productos](Images/view_products.png)
@@ -115,11 +138,3 @@ Acceder desde el navegador a `http://localhost:8000`
 
 ### Eliminar producto
 ![Eliminar producto](Images/delete_product.png)
-
----
-
-## Notas
-
-- El sistema está configurado para funcionar en entornos locales usando XAMPP.
-- La funcionalidad de subida de imágenes se encuentra planificada.
-- Todas las vistas están optimizadas para usabilidad y estética.
